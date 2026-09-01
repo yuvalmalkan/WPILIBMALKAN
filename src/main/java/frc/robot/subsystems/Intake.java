@@ -6,10 +6,10 @@ public class Intake {
         CLOSED,
     }
 
-    private static IntakeState intakeState;
+    private static IntakeState intakeState = IntakeState.CLOSED;;
 
 
-    public static IntakeState GetState(){
+    public static IntakeState getState(){
         return intakeState;
     }
 

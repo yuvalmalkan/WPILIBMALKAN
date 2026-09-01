@@ -17,15 +17,19 @@ public class Robot extends TimedRobot {
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
-  public Robot() {
-    Intake.close();
+   public Robot() {}
+   
+   
+   @Override
+   public void robotInit() {
+     Intake.close();
+   }
 
 
-  }
 
   @Override
   public void robotPeriodic() {
-    System.out.println("current state: " + Intake.GetState());
+    System.out.println("current state: " + Intake.getState());
   }
 
   @Override
