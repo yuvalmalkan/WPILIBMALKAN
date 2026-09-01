@@ -6,13 +6,19 @@ public class Intake {
         CLOSED,
     }
 
-    private IntakeState intakeState;
+    private static IntakeState intakeState;
 
-    public void open(){
+
+    public static IntakeState GetState(){
+        return intakeState;
+    }
+
+    public static void open(){
         intakeState = IntakeState.OPEN;
     }
 
-    public void close(){
+
+    public static void close(){
         intakeState = IntakeState.CLOSED;
     }
 

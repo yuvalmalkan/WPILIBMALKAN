@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import frc.robot.subsystems.Intake;
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
@@ -16,24 +17,33 @@ public class Robot extends TimedRobot {
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
-  public Robot() {}
+  public Robot() {
+    Intake.close();
+
+
+  }
 
   @Override
-  public void robotPeriodic() {}
+  public void robotPeriodic() {
+    System.out.println("current state: " + Intake.GetState());
+  }
 
   @Override
   public void autonomousInit() {
-    System.out.println("Autonomous mode started");
+    System.out.println("Autonomous mode started"); //one time
+    Intake.open();
   }
 
   @Override
   public void autonomousPeriodic() {
-    System.out.println("Autonomous mode periodic");
+    System.out.println("Autonomous mode periodic"); //0.2 loop
   }
 
   @Override
   public void teleopInit() {
     System.out.println("Teleoperated mode started");
+    Intake.close();
+    
   }
 
   @Override
