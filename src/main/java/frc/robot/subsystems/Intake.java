@@ -1,5 +1,7 @@
+package frc.robot.subsystems;
+
 public class Intake {
-    public Enum IntakeState{
+    public enum IntakeState{
         OPEN,
         CLOSED,
     }
